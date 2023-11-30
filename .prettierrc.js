@@ -1,12 +1,23 @@
 /* eslint-disable */
 
 module.exports = {
-  semi: true,
-  trailingComma: "all",
-  singleQuote: true,
-  printWidth: 100,
+  trailingComma: "es5",
   tabWidth: 2,
-  arrowParens: "avoid",
-  endOfLine: "auto",
+  indentSize: 2,
+  semi: true,
+  singleQuote: true,
+  printWidth: 80,
   bracketSpacing: true,
+  jsxSingleQuote: false,
+  endOfLine: "lf",
+  organizeImportsSkipDestructiveCodeActions: true,
+
+  overrides: [
+    {
+      files: "*.md",
+      options: {
+        printWidth: 1000,
+      },
+    },
+  ],
 };
