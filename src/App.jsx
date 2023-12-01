@@ -1,10 +1,12 @@
 import { useState } from "react";
+
 import Player from "./Components/Player";
 import Log from "./Components/Log";
 import GameBoard from "./Components/GameBoard";
+import { WINNING_COMBINATIONS } from "./Components/winning-combinations";
 
 function derivedActivePlayer(gameTurns) {
-  let currentPlayer = "X";
+  let currentPlayer = 'X';
 
   if (gameTurns.length > 0 && gameTurns[0].player === "X") {
     currentPlayer = "O";
@@ -14,11 +16,9 @@ function derivedActivePlayer(gameTurns) {
 }
 
 function App() {
-  // for logging the games amount of turns taken
   const [gameTurns, setGameTurns] = useState([]);
   const activePlayer = derivedActivePlayer(gameTurns);
 
-  // this will update the active player
   function handleSelectSquare(rowIndex, colIndex) {
     setGameTurns((prevTurns) => {
       const currentPlayer = derivedActivePlayer(prevTurns);
